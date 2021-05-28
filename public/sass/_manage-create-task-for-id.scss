@@ -1,0 +1,9 @@
+.manage__create-task-form {
+  .input-date {
+    flex-basis: 140px;
+  }
+  .btn-add-task {
+    @include btn-create-task;
+    width: 150px;
+  }
+}

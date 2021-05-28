@@ -1,0 +1,40 @@
+<div class="page hire-dismiss-list">
+    <h1 class="main-title">{{viewTitle}}</h1>
+    <h3 class="result-info">{{resultInfo}}</h3>
+    <div class="buttons-container">
+        <a class="btn-back-to-hire-dismiss" href="/admin/hire-dismiss"><i class="far fa-arrow-alt-circle-left"></i>Back</a>
+        <a class="btn-back-to-admin" href="/admin"><i class="fas fa-home"></i>Back to Admin's Panel</a>
+    </div>
+    <table class="table-list table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Location</th>
+                <th>Progr. Language</th>
+                <th>Experience</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each programmers}}
+            <tr>
+                <td>{{this.fullName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.location}}</td>
+                <td>{{this.programmingLanguage}}</td>
+                <td>{{this.experience}}</td>
+                <td>
+                    {{#if this.hired}}
+                      <a href="/admin/dismiss/api/list/{{this._id}}" data-id="{{this._id}}" class="dismiss-btn" onclick="return confirm('Are you sure you want to dismiss this Programmer?')">Dismiss</a>
+                    {{else}}
+                      <a href="/admin/hire/api/list/{{this._id}}" data-id="{{this._id}}" class="hire-btn" onclick="return confirm('Are you sure you want to hire this Programmer?')">Hire</a>
+                    {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

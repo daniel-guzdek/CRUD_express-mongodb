@@ -1,0 +1,100 @@
+.manage {
+  @include page;
+  .main-title {
+    margin-top: 50px;
+  }
+  .main-subtitle {
+    @include main-subtitle;
+  }
+  .buttons-container {
+    .btn-hire-dismiss {
+      @include btn-go-to-hire-dismiss-panel;
+    }
+  }
+  .manage__search-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin-top: 40px;
+    .search-form {
+      padding: 20px;
+      display: flex;
+      flex-basis: 100%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      -webkit-box-shadow: -1px 2px 18px -11px $ninth-color; 
+      box-shadow: -1px 2px 18px -11px $ninth-color;
+      transition: .4s ease-out;
+      .search-panel__title {
+        font-family: $first-font-family;
+        color: $first-font-color;
+        margin-bottom: 20px;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+      }
+      .form-group {
+        flex-basis: 30%;
+        height: 40px;
+        .form-group__input {
+          width: 100%;
+          border: 1px dotted #ddd;
+          border-radius: 4px;
+          &:focus {
+            outline: 1px solid $ninth-color;
+          }
+        }
+        @media (max-width: 751px) {
+          flex-basis: 48%;
+        }
+        @media (max-width: 511px) {
+          flex-basis: 100%;
+        }
+      }
+      .form-group-radio {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-basis: 30%;
+        height: 40px;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        @media (max-width: 751px) {
+          flex-basis: 48%;
+        }
+        @media (max-width: 511px) {
+          flex-basis: 100%;
+          margin-bottom: 10px;
+        }
+        .form-group__input {
+          border-radius: 4px;
+          flex-basis: 100%;
+        }
+        .radio-group {
+          margin-top: 5px;
+          margin-right: 10px;
+          .radio-label {
+            font-family: $second-font-family;
+            font-size: 12px;
+            margin-left: 5px;
+          }
+        }
+      }
+      .form-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn-submit {
+          margin: 20px 0 0 0;
+          background-color: $ninth-color;
+          &:hover {
+            background-color: darken($ninth-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}

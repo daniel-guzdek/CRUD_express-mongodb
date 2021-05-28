@@ -1,0 +1,47 @@
+.section {
+  &__content-title {
+    margin: 30px auto;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+  &__content-subtitle {
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-family: $first-font-family;
+    line-height: 170%;
+    .login-info, .password-info {
+      font-weight: 700;
+      margin-left: 10px;
+      border: 1px dotted $first-font-color;
+      padding: 3px 5px;
+    }
+  }
+  &__content-description {
+    margin-bottom: 30px;
+    letter-spacing: 1.3px;
+    font-family: $first-font-family;
+    line-height: 170%;
+  }
+  .admin-log-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    .form-group {
+      flex-basis: 40%;
+    }
+    .admin-log__btn {
+      display: flex;
+      flex-basis: 10%;
+      margin-top: 10px;
+      margin-left: 3px;
+      align-items: center;
+      .btn-submit {
+        @include big-button;
+        &:hover {
+          background-color: royalblue;
+        }
+      }
+    }
+  }
+}

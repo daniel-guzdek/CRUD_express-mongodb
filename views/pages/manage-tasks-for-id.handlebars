@@ -1,0 +1,66 @@
+<div class="page list">
+    <h1 class="main-title">{{viewTitle}}</h1>
+    {{!-- <h3 class="result-info">{{resultInfo}}</h3> --}}
+    <div class="buttons-container">
+        {{!-- <a class="btn-add" href="/admin/add-programmer"><i class="fa fa-plus"></i>Create New</a> --}}
+        <a class="btn-back" href="/admin/manage/list"><i class="far fa-arrow-alt-circle-left"></i>Back</a>
+        <a class="btn-back-to-admin" href="/admin"><i class="fas fa-home"></i>Back to Admin's Panel</a>
+        {{!-- <a class="btn-back-to-search" href="/admin/search"><i class="fas fa-search"></i>Go to Search Panel</a> --}}
+    </div>
+    <table class="table-list table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Location</th>
+                <th>Progr. Language</th>
+                <th>Experience</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{data.fullName}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.mobile}}</td>
+                <td>{{data.location}}</td>
+                <td>{{data.programmingLanguage}}</td>
+                <td>{{data.experience}}</td>
+                <td>
+                    <a href="/admin/update-programmer?id={{this._id}}"><i class="fa fa-pencil list-icon edit-icon" aria-hidden="true"></i></a>
+                    <a class="delete" data-id="{{this._id}}"><i class="fa fa-times list-icon delete-icon" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table-list table">
+        {{#if data.tasks}}
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date of Creation</th>
+                <th>Deadline Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data.tasks}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.dateOfCreation}}</td>
+                <td>{{this.deadline}}</td>
+                <td>
+                    <a href="/admin/update-programmer?id={{this._id}}"><i class="fa fa-pencil list-icon edit-icon" aria-hidden="true"></i></a>
+                    <a class="delete" data-id="{{this._id}}"><i class="fa fa-times list-icon delete-icon" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+            {{else}}
+                <h3 class="main-title" style="color: crimson; margin-top: 60px">This Programmer hasn't Tasks yet.</h3>
+                <a href="/admin/manage/tasks/create/{{data._id}}" class="btn-create-task"><i class="far fa-plus-square"></i>Create Task for This Programmer</a>
+        {{/if}}
+        </tbody>
+    </table>
+</div>

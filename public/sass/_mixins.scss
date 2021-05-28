@@ -1,0 +1,136 @@
+@mixin page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 50px auto;
+}
+
+// main titles
+@mixin main-title {
+  display: block;
+  text-align: center;
+  font-family: $first-font-family;
+  font-size: 20px;
+  color: $first-font-color;
+  margin-bottom: 50px;
+}
+
+// main-subtitles
+@mixin main-subtitle {
+  display: block;
+  text-align: center;
+  font-family: $first-font-family;
+  font-size: 17px;
+  color: $first-font-color;
+  margin-bottom: 40px;
+}
+
+// important terms in paragraph
+@mixin important-term {
+  font-family: $third-font-family;
+  font-weight: 700;
+  margin: 0 3px 0 10px;
+}
+
+// result-info
+@mixin result-info {
+  display: block;
+  text-align: center;
+  font-family: $first-font-family;
+  font-size: 16px;
+  color: $sixth-color;
+  margin-bottom: 50px;
+}
+
+// big buttons
+@mixin big-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  padding: 3px 6px;
+  text-decoration: none;
+  margin-left: 5px;
+  font-family: $first-font-family;
+  font-size: 13px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .4s ease;
+  i {
+    margin-right: 10px;
+  }
+}
+
+// BUTTONS
+@mixin btn-back-to-admin-panel {
+  @include big-button;
+  background-color: $sixth-color;
+  &:hover {
+    background-color: darken($sixth-color, 10%);
+  }
+}
+
+@mixin btn-back {
+  @include big-button;
+  background-color: $first-font-color;
+  width: 120px;
+  &:hover {
+    background-color: darken($first-font-color, 10%);
+  }
+}
+
+@mixin btn-go-to-hire-dismiss-panel {
+  @include big-button;
+  background-color: $seventh-color;
+  &:hover {
+    background-color: darken($seventh-color, 10%);
+  }
+}
+
+@mixin btn-back-to-search-panel {
+  @include big-button;
+  background-color: $third-color;
+  &:hover {
+    background-color: rgb(100, 196, 199);
+  }
+}
+
+@mixin btn-view-all {
+  @include big-button;
+  background-color: $first-font-color;
+  &:hover {
+    background-color: darken($first-font-color, 10%);
+  }
+}
+
+@mixin btn-add {
+  @include big-button;
+  background-color: $second-color;
+  &:hover {
+    background-color: royalblue;
+  }
+}
+
+@mixin btn-submit {
+  @include big-button;
+  background-color: $seventh-color;
+  &:hover {
+    background-color: darken($seventh-color, 10%);
+  }
+}
+
+@mixin btn-create-task {
+  @include big-button;
+  background-color: darken($tenth-color, 5%);
+  .fa-plus-square {
+    font-size: 18px;
+  }
+  &:hover {
+    background-color: darken($tenth-color, 12%);
+  }
+}

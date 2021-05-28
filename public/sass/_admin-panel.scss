@@ -1,0 +1,182 @@
+.admin {
+  .main-title {
+    margin-top: 50px;
+  }
+  .back-link {
+    margin-bottom: 30px;
+    text-decoration: none;
+    transition: .4s;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &__icon {
+      margin-right: 10px;
+      color: $second-color;
+    }
+    &__title {
+      font-family: $second-font-family;
+      color: $second-color;
+      font-size: 15px;
+    }
+  }
+  .admin-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    width: 90%;
+    .admin-panel__card {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 30%;
+      max-width: 350px;
+      min-width: 270px;
+      border: 1px solid #ddd;
+      margin: 0 10px 40px 10px;
+      padding: 0 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: .4s ease-out;
+      &:nth-of-type(1) {
+        -webkit-box-shadow: -1px 2px 18px -11px #3639ff; 
+        box-shadow: -1px 2px 18px -11px #3639ff;
+        &:hover {
+          .card__image {
+            .fa-info-circle {
+              animation: text-animation 2s ease forwards;
+            }
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        -webkit-box-shadow: -1px 2px 18px -11px #36ffc3; 
+        box-shadow: -1px 2px 18px -11px #36ffc3;
+        &:hover {
+          .card__image {
+            .fa-tasks {
+              animation: text-animation .5s ease forwards;
+            }
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        -webkit-box-shadow: -1px 2px 18px -11px #36EEFF; 
+        box-shadow: -1px 2px 18px -11px #36EEFF;
+        &:hover {
+          .card__image {
+            .fa-address-card {
+              animation: text-animation 2s ease forwards;
+            }
+          }
+        }
+      }
+      &:nth-of-type(4) {
+        -webkit-box-shadow: -1px 2px 18px -11px #ff3683; 
+        box-shadow: -1px 2px 18px -11px #ff3683;
+        &:hover {
+          .card__image {
+            .fa-user-plus {
+              animation: text-animation 2s ease forwards;
+            }
+          }
+        }
+      }
+      &:nth-of-type(5) {
+        -webkit-box-shadow: -1px 2px 18px -11px $seventh-color; 
+        box-shadow: -1px 2px 18px -11px $seventh-color;
+        &:hover {
+          .card__image {
+            .fa-map-signs {
+              animation: text-animation 2s ease forwards;
+            }
+          }
+        }
+      }
+      &:hover {
+        transform: translateY(-10px);
+      }
+      .card__title {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        height: 40px;
+        font-family: $first-font-family;
+        font-size: 17px;
+        color: $first-font-color;
+      }
+      .card__description {
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        font-family: $second-font-family;
+        font-size: 14px;
+        letter-spacing: 1.4px;
+        color: $first-font-color;
+      }
+      .card__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 140px;
+        .admin-icon {
+          font-size: 70px;
+        }
+        .fa-info-circle {
+          background: $second-color;
+          background: -webkit-linear-gradient(0.25turn, #3639ff, #ebf8e1, #ffd257);
+          background: -moz-linear-gradient(0.25turn, #3639ff, #ebf8e1, #ffd257);
+          background: -webkit-linear-gradient(0.25turn, #3639ff, #ebf8e1,#ffd257);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: .4s;
+          animation: text-animation-rev 0.5s ease forwards;
+        }
+        .fa-tasks {
+          background: $second-color;
+          background: -webkit-linear-gradient(to right, #36ffc3 0%, #fde36d 100%);
+          background: -moz-linear-gradient(to right,  #36ffc3 0%,  #fde36d 100%);
+          background: linear-gradient(to right, #36ffc3 0%,  #fde36d 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: text-animation-rev 0.5s ease forwards;
+        }
+        .fa-address-card {
+          background: $second-color;
+          background: -webkit-linear-gradient(0.25turn, #5C7CFA, #00eeff,  #6dfdd2);
+          background: -moz-linear-gradient(0.25turn, #5C7CFA,#00eeff,  #6dfdd2);
+          background: -webkit-linear-gradient(0.25turn, #5C7CFA, #00eeff, #6dfdd2);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: .4s;
+          animation: text-animation-rev 0.5s ease forwards;
+        }
+        .fa-user-plus {
+          background: $second-color;
+          background: -webkit-linear-gradient(0.25turn,  #fff2ed, #ca0bfa, #ff3683);
+          background: -moz-linear-gradient(0.25turn, #feedff, #ca0bfa, #ff3683);
+          background: -webkit-linear-gradient(0.25turn,#feedff, #ca0bfa, #ff3683);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: .4s;
+          animation: text-animation-rev 0.5s ease forwards;
+        }
+        .fa-map-signs {
+          background: $second-color;
+          background: -webkit-linear-gradient(0.25turn,  #f80202, $seventh-color, #ff5436);
+          background: -moz-linear-gradient(0.25turn, #f80202, $seventh-color, #ff5436);
+          background: -webkit-linear-gradient(0.25turn, #f80202, $seventh-color, #ff5436);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: .4s;
+          animation: text-animation-rev 0.5s ease forwards;
+        }
+      }
+    }
+  }
+}

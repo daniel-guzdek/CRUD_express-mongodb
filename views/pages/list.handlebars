@@ -1,0 +1,38 @@
+<div class="page list">
+    <h1 class="main-title">{{viewTitle}}</h1>
+    <h3 class="result-info">{{resultInfo}}</h3>
+    <div class="buttons-container">
+        <a class="btn-add" href="/admin/add-programmer"><i class="fa fa-plus"></i>Create New</a>
+        <a class="btn-back-to-admin" href="/admin"><i class="fas fa-home"></i>Back to Admin's Panel</a>
+        <a class="btn-back-to-search" href="/admin/search"><i class="fas fa-search"></i>Go to Search Panel</a>
+    </div>
+    <table class="table-list table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Location</th>
+                <th>Progr. Language</th>
+                <th>Experience</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each programmers}}
+            <tr>
+                <td>{{this.fullName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.location}}</td>
+                <td>{{this.programmingLanguage}}</td>
+                <td>{{this.experience}}</td>
+                <td>
+                    <a href="/admin/update-programmer?id={{this._id}}"><i class="fa fa-pencil list-icon edit-icon" aria-hidden="true"></i></a>
+                    <a class="delete" data-id="{{this._id}}"><i class="fa fa-times list-icon delete-icon" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

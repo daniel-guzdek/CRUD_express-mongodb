@@ -1,0 +1,28 @@
+.page {
+  .fa-exclamation {
+    font-size: 40px;
+    color: crimson;
+    margin-bottom: 50px;
+  }
+  .error-title {
+    @include main-title;
+    font-size: 18px;
+    color: crimson;
+  }
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    .btn-add {
+      @include btn-add;
+    }
+    .btn-back-to-admin {
+      @include btn-back-to-admin-panel;
+    }
+    .btn-back-to-search {
+      @include btn-back-to-search-panel;
+    }
+    .btn-view_all {
+      @include btn-view-all;
+    }
+  }
+}

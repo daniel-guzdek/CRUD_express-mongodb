@@ -1,0 +1,36 @@
+<div class="page manage-list">
+    <h1 class="main-title">{{viewTitle}}</h1>
+    <h3 class="result-info">{{resultInfo}}</h3>
+    <div class="buttons-container">
+        <a class="btn-back" href="/admin/manage"><i class="far fa-arrow-alt-circle-left"></i>Back</a>
+        <a class="btn-back-to-admin" href="/admin"><i class="fas fa-home"></i>Back to Admin's Panel</a>
+    </div>
+    <table class="table-list table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Progr. Language</th>
+                <th>Experience</th>
+                <th>Hired</th>
+                <th>Actual Tasks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each programmers}}
+            <tr>
+                <td>{{this.fullName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.programmingLanguage}}</td>
+                <td>{{this.experience}}</td>
+                <td>{{this.hired}}</td>
+                <td>Actual: {{#if this.actualTaks}}{{this.actualTaks.length}}{{else}}<span style="font-weight: bold;" class="nr-actual-tasks">0</span>{{/if}} Done: {{#if this.doneTaks}}{{this.doneTaks.length}}{{else}}<span style="font-weight: bold;" class="nr-done-tasks">0</span>{{/if}}</td>
+
+                <td><a href="/admin/manage/tasks/create/{{this._id}}" class="btn-show-tasks"><i class="far fa-eye"></i>Show Tasks</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

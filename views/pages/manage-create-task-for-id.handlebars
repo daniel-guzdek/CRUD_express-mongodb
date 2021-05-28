@@ -1,0 +1,22 @@
+<div class="page manage__create-task-form">
+  <h1 class="main-title">{{viewTitle}}{{programmer._id}}</h1>
+  {{!-- po wciśnięciu buttona na ACTION ma być znowu przeniesiony do listy zadań tego single programmera --}}
+  {{!-- 1. Na klick w ,,ADD TASK" ma dodać do bazy danych tytł, opis i datę zadania --}}
+  <form action="admin/manage/tasks/{{programmer._id}}" method="POST" id="create_task">
+    <div class="form-group">
+      <label class="form-group__label">Task title</label>
+      <input class="form-group__input" type="text" name="title" placeholder="Task title" value="">
+    </div>
+    <div class="form-group">
+      <label class="form-group__label">Task description</label>
+      <input class="form-group__input" type="text" name="description" placeholder="Task description" value="">
+    </div>
+    <div class="form-group input-date">
+      <label class="form-group__label">Task deadline</label>
+      <input type="date" name="deadline" id="">
+    </div>
+    <div class="form-btn">
+      <button type="submit" class="btn-add-task"><i class="far fa-plus-square"></i>Add task</button>
+    </div>
+  </form>
+</div>

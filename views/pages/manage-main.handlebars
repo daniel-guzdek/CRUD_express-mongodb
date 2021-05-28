@@ -1,0 +1,131 @@
+<div class="page manage">
+  <h1 class="main-title">{{viewTitle}}</h1>
+  <h2 class="main-subtitle">Add or Delete Tasks for Programmers</h2>
+  <div class="buttons-container">
+    <a class="btn-view_all" href="/admin/manage/list"><i class="fas fa-list"></i>View all Hired Programmers</a>
+    <a class="btn-hire-dismiss" href="/admin/hire-dismiss"><i class="fas fa-map-signs"></i>Hire / Dismiss Panel</a>
+    <a class="btn-back-to-admin" href="/admin"><i class="fas fa-home"></i>Back to Admin's Panel</a>
+  </div>
+  <div class="manage__search-section">
+    <form action="/admin/manage/list" id="search_programmer" class="search-form">
+      <h3 class="search-panel__title">Search Hired Programmers by:</h3>
+      <div class="form-group">
+        <input type="hidden" name="id">
+        <input class="form-group__input" type="text" name="fullName" placeholder="Full Name">
+      </div>
+      <div class="form-group">
+        <input class="form-group__input" type="text" name="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input class="form-group__input" type="text" name="mobile" placeholder="Mobile">
+      </div>
+      <div class="form-group">
+        <input class="form-group__input" type="text" name="location" placeholder="Location">
+      </div>
+      <div class="form-group">
+        <select class="form-group__input" name="programmingLanguage" id="programmingLanguage-select">
+          <option value="">Programming language</option>
+          <option value="ABAP">ABAP</option>
+          <option value="APL">APL</option>
+          <option value="Ada">Ada</option>
+          <option value="AutoHotkey">AutoHotkey</option>
+          <option value="C">C</option>
+          <option value="C#">C#</option>
+          <option value="C++">C++</option>
+          <option value="Clojure">Clojure</option>
+          <option value="ColdFusion">ColdFusion</option>
+          <option value="Common Lisp">Common Lisp</option>
+          <option value="Crystal">Crystal</option>
+          <option value="D">D</option>
+          <option value="Dart">Dart</option>
+          <option value="Delphi XE5">Delphi XE5</option>
+          <option value="Elixir">Elixir</option>
+          <option value="Elm">Elm</option>
+          <option value="Fish">Fish</option>
+          <option value="Emacs Lisp">Emacs Lisp</option>
+          <option value="Erlang">Erlang</option>
+          <option value="FORTRAN">FORTRAN</option>
+          <option value="GHC (Haskell)">GHC (Haskell)</option>
+          <option value="GNU Octave">GNU Octave</option>
+          <option value="Gforth">Gforth</option>
+          <option value="Go">Go</option>
+          <option value="Groovy">Groovy</option>
+          <option value="Guile">Guile</option>
+          <option value="Hugs (Haskell)">Hugs (Haskell)</option>
+          <option value="Io">Io</option>
+          <option value="Java">Java</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Julia">Julia</option>
+          <option value="K (Kona)">K (Kona)</option>
+          <option value="Kotlin">Kotlin</option>
+          <option value="Lua">Lua</option>
+          <option value="MATLAB">MATLAB</option>
+          <option value="MIT/GNU Scheme">MIT/GNU Scheme</option>
+          <option value="Mathematica">Mathematica</option>
+          <option value="MySQL">MySQL</option>
+          <option value="Nim">Nim</option>
+          <option value="OCaml">OCaml</option>
+          <option value="Objective-C">Objective-C</option>
+          <option value="PHP">PHP</option>
+          <option value="Perl">Perl</option>
+          <option value="PicoLisp">PicoLisp</option>
+          <option value="PostgreSQL">PostgreSQL</option>
+          <option value="Prolog (SWI-Prolog)">Prolog (SWI-Prolog)</option>
+          <option value="Pyret">Pyret</option>
+          <option value="Python 2">Python 2</option>
+          <option value="Python 3">Python 3</option>
+          <option value="R">R</option>
+          <option value="Racket (PLT Scheme)">Racket (PLT Scheme)</option>
+          <option value="Raku">Raku</option>
+          <option value="Regina REXX">Regina REXX</option>
+          <option value="Ruby">Ruby</option>
+          <option value="Rust">Rust</option>
+          <option value="SageMath">SageMath</option>
+          <option value="Scala">Scala</option>
+          <option value="Smalltalk">Smalltalk</option>
+          <option value="Swift">Swift</option>
+          <option value="TCL">TCL</option>
+          <option value="Turbo Pascal 7.0">Turbo Pascal 7.0</option>
+          <option value="Vala">Vala</option>
+          <option value="Visual Basic 6">Visual Basic 6</option>
+          <option value="WebAssembly (WAST)">WebAssembly (WAST)</option>
+          <option value="awk">awk</option>
+          <option value="bc">bc</option>
+          <option value="dc">dc</option>
+          <option value="zsh">zsh</option>
+        </select>
+      </div>
+      <div class="form-group form-group-radio">
+        <select class="form-group__input" name="experience" id="experience-select">
+          <option value="">Experience</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="10 <">more than 10</option>
+        </select>
+        <div class="radio-group">
+          <input type="radio" id="radio-exactly" name="exactly" value="exactly">
+          <label for="radio-exactly" class="radio-label">Exactly (default):</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="radio-less_than" name="lessThan" value="lessThan">
+          <label for="radio-less_than" class="radio-label">Less than:</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="radio-greater_than" name="greaterThan" value="greaterThan">
+          <label for="radio-greater_than" class="radio-label">Greater than:</label>
+        </div>
+      </div>
+      <div class="form-btn">
+        <button type="submit" class="btn-submit"><i class="fas fa-search"></i>Search</button>
+      </div>
+    </form>
+  </div>
+</div>
